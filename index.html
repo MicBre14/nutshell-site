@@ -123,6 +123,23 @@
         box-shadow: var(--shadow);
         background: #1b1e27;
       }
+      .promo .player { position: relative; width: min(270px, 100%); }
+      .promo .player video { width: 100%; }
+      .promo .sound {
+        position: absolute;
+        right: 16px;
+        bottom: 16px;
+        border: 0;
+        border-radius: 999px;
+        padding: 8px 14px;
+        font: inherit;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #fff;
+        background: rgb(20 22 34 / 0.72);
+        cursor: pointer;
+      }
+      .promo .sound:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
       .promo ul { margin: 0; padding-left: 1.2em; color: var(--muted); }
       .promo li { margin: 4px 0; }
       @media (max-width: 640px) {
@@ -183,7 +200,10 @@
 
     <main class="wrap">
       <section class="promo" aria-label="Promo video">
+        <div class="player">
         <video src="promo.mp4" poster="promo-poster.webp" width="270" height="480" autoplay muted loop playsinline preload="metadata" aria-label="Nutshell promo video: gameplay from Acorn Ascent, Happy Squirrels, Before the Frost, Solitaire, Bubble Pop and Squirrel Run"></video>
+        <button class="sound" type="button" aria-pressed="false">🔇 Sound on</button>
+        </div>
         <div>
           <h2>See it in action</h2>
           <p class="lead">Arcade games, card games and puzzles – all in one small app, all without a single ad.</p>
@@ -252,12 +272,20 @@
       © 2026 Pejlar AB
     </footer>
     <script>
+      const v = document.querySelector('.promo video');
+      const sound = document.querySelector('.promo .sound');
+      sound.addEventListener('click', () => {
+        v.muted = !v.muted;
+        if (!v.muted && v.paused) v.play();
+        sound.textContent = v.muted ? '🔇 Sound on' : '🔊 Sound off';
+        sound.setAttribute('aria-pressed', String(!v.muted));
+      });
       // respect "reduce motion": no autoplay, show controls instead
       if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        const v = document.querySelector('.promo video');
         v.removeAttribute('autoplay');
         v.pause();
         v.controls = true;
+        sound.hidden = true;
       }
     </script>
   </body>
