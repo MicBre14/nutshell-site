@@ -111,6 +111,25 @@
         .shots { justify-content: flex-start; }
       }
 
+      /* promo video */
+      .promo { display: grid; gap: 28px 40px; align-items: center; grid-template-columns: auto minmax(0, 1fr); }
+      .promo video {
+        display: block;
+        width: min(270px, 100%);
+        height: auto;
+        aspect-ratio: 9 / 16;
+        border-radius: 30px;
+        border: 6px solid #1b1e27;
+        box-shadow: var(--shadow);
+        background: #1b1e27;
+      }
+      .promo ul { margin: 0; padding-left: 1.2em; color: var(--muted); }
+      .promo li { margin: 4px 0; }
+      @media (max-width: 640px) {
+        .promo { grid-template-columns: minmax(0, 1fr); justify-items: center; text-align: center; }
+        .promo ul { text-align: left; }
+      }
+
       /* sections */
       section { padding: 48px 0 8px; }
       h2 { font-size: clamp(1.6rem, 4.5vw, 2.1rem); margin: 0 0 6px; letter-spacing: -0.01em; }
@@ -163,6 +182,20 @@
     </div>
 
     <main class="wrap">
+      <section class="promo" aria-label="Promo video">
+        <video src="promo.mp4" poster="promo-poster.webp" width="270" height="480" autoplay muted loop playsinline preload="metadata" aria-label="Nutshell promo video: gameplay from Acorn Ascent, Happy Squirrels, Before the Frost, Solitaire, Bubble Pop and Squirrel Run"></video>
+        <div>
+          <h2>See it in action</h2>
+          <p class="lead">Arcade games, card games and puzzles – all in one small app, all without a single ad.</p>
+          <ul>
+            <li>Leap up giant trees in Acorn Ascent</li>
+            <li>Fling squirrels in Happy Squirrels</li>
+            <li>Race the frost in Before the Frost</li>
+            <li>Solitaire where every deal can be won</li>
+          </ul>
+        </div>
+      </section>
+
       <section>
         <h2>Made by people who are tired of ads</h2>
         <p class="lead">
@@ -218,5 +251,14 @@
       </nav>
       © 2026 Pejlar AB
     </footer>
+    <script>
+      // respect "reduce motion": no autoplay, show controls instead
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const v = document.querySelector('.promo video');
+        v.removeAttribute('autoplay');
+        v.pause();
+        v.controls = true;
+      }
+    </script>
   </body>
 </html>
