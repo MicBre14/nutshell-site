@@ -3,23 +3,219 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Nutshell by pejlar</title>
+    <title>Nutshell – 30 puzzle & arcade games, no ads</title>
+    <meta name="description" content="Nutshell by pejlar: 30 puzzle and arcade games in one app – Sudoku, Solitaire, Mahjong, Acorn Ascent and more. No ads, ever. Works offline, no account." />
+    <meta property="og:title" content="Nutshell – 30 puzzle & arcade games, no ads" />
+    <meta property="og:description" content="30 puzzle and arcade games in one app. No ads, ever. Works offline, no account." />
+    <meta property="og:image" content="icon-512.png" />
+    <link rel="icon" href="icon-512.png" />
     <style>
-      :root { color-scheme: light dark; --bg: #f4f6fa; --text: #1f2430; --muted: #6b7385; --accent: #4046cd; }
-      @media (prefers-color-scheme: dark) { :root { --bg: #14171d; --text: #e8ebf1; --muted: #949bab; --accent: #8f9bff; } }
-      body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-      main { max-width: 720px; margin: 0 auto; padding: 48px 20px; text-align: center; }
-      img { width: 96px; height: 96px; border-radius: 22px; }
-      p { color: var(--muted); }
+      :root {
+        color-scheme: light dark;
+        --bg: #f4f6fa;
+        --card: #ffffff;
+        --text: #1f2430;
+        --muted: #5f6779;
+        --line: #e1e5ee;
+        --accent: #4046cd;
+        --hero-a: #6c7cf8;
+        --hero-b: #4046cd;
+        --gold: #f6c453;
+        --shadow: 0 18px 40px rgb(31 36 48 / 0.18);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #14171d;
+          --card: #1e222b;
+          --text: #e8ebf1;
+          --muted: #a2a9b8;
+          --line: #2d323d;
+          --accent: #8f9bff;
+          --hero-a: #3d47b8;
+          --hero-b: #232874;
+          --shadow: 0 18px 40px rgb(0 0 0 / 0.45);
+        }
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      }
       a { color: var(--accent); }
+      .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+      /* hero */
+      .hero {
+        background: linear-gradient(160deg, var(--hero-a), var(--hero-b));
+        color: #fff;
+        padding: 56px 0 120px;
+        text-align: center;
+        overflow: hidden;
+      }
+      .hero img.icon {
+        width: 112px;
+        height: 112px;
+        border-radius: 26px;
+        box-shadow: 0 14px 34px rgb(0 0 0 / 0.3);
+      }
+      .hero h1 { font-size: clamp(2.4rem, 7vw, 3.6rem); line-height: 1.1; margin: 20px 0 8px; letter-spacing: -0.02em; }
+      .hero .tag { font-size: clamp(1.1rem, 3.4vw, 1.4rem); margin: 0 auto; max-width: 34ch; opacity: 0.95; }
+      .pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 24px 0 0; padding: 0; list-style: none; }
+      .pills li {
+        background: rgb(255 255 255 / 0.16);
+        border: 1px solid rgb(255 255 255 / 0.28);
+        border-radius: 999px;
+        padding: 6px 14px;
+        font-size: 0.95rem;
+        font-weight: 600;
+      }
+      .soon {
+        display: inline-block;
+        margin-top: 28px;
+        background: var(--gold);
+        color: #3b2a00;
+        font-weight: 700;
+        border-radius: 14px;
+        padding: 10px 18px;
+      }
+      .soon small { display: block; font-weight: 600; font-size: 0.85rem; opacity: 0.8; }
+
+      /* screenshots */
+      .shots-wrap { margin-top: -90px; }
+      .shots {
+        display: flex;
+        gap: 22px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding: 10px 20px 26px;
+        scrollbar-width: thin;
+      }
+      .shots figure { margin: 0; flex: 0 0 auto; width: 220px; scroll-snap-align: center; text-align: center; }
+      .shots img {
+        display: block;
+        width: 220px;
+        height: auto;
+        aspect-ratio: 480 / 984;
+        border-radius: 26px;
+        border: 6px solid #1b1e27;
+        box-shadow: var(--shadow);
+        background: #1b1e27;
+      }
+      .shots figcaption { margin-top: 12px; font-size: 0.95rem; color: var(--muted); }
+      .shots figcaption b { display: block; color: var(--text); }
+      .hint { text-align: center; color: var(--muted); font-size: 0.9rem; margin: 0; }
+      @media (min-width: 1080px) {
+        .shots { justify-content: flex-start; }
+      }
+
+      /* sections */
+      section { padding: 48px 0 8px; }
+      h2 { font-size: clamp(1.6rem, 4.5vw, 2.1rem); margin: 0 0 6px; letter-spacing: -0.01em; }
+      .lead { color: var(--muted); margin: 0 0 22px; max-width: 60ch; }
+      .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+      .card { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 20px; }
+      .card .em { font-size: 1.8rem; line-height: 1; }
+      .card h3 { margin: 10px 0 4px; font-size: 1.1rem; }
+      .card p { margin: 0; color: var(--muted); font-size: 0.97rem; }
+      .games { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 0; padding: 0; list-style: none; }
+      .games li { background: var(--bg); border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; font-size: 0.92rem; }
+      .card.golden { border-color: var(--gold); box-shadow: inset 0 0 0 1px var(--gold); }
+      .price { font-weight: 700; color: var(--text); }
+      .tiers { font-size: 1.05rem; color: var(--muted); }
+
+      footer { padding: 48px 0 56px; text-align: center; color: var(--muted); font-size: 0.95rem; }
+      footer nav { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; margin-bottom: 8px; }
     </style>
   </head>
   <body>
-    <main>
-      <img src="icon-512.png" alt="" />
-      <h1>Nutshell</h1>
-      <p>Puzzle and arcade games by pejlar – no ads, ever.</p>
-      <p><a href="privacy-policy.html">Privacy policy</a> · <a href="mailto:support@pejlar.se">support@pejlar.se</a></p>
+    <header class="hero">
+      <div class="wrap">
+        <img class="icon" src="icon-512.png" alt="Nutshell app icon" width="112" height="112" />
+        <h1>Nutshell</h1>
+        <p class="tag">30 puzzle &amp; arcade games in one small app. No ads, ever.</p>
+        <ul class="pills">
+          <li>🚫 No ads</li>
+          <li>📴 Works offline</li>
+          <li>🙅 No account</li>
+          <li>🌰 One-time purchase</li>
+        </ul>
+        <span class="soon">Coming soon to Google Play<small>iPhone &amp; iPad later</small></span>
+      </div>
+    </header>
+
+    <div class="shots-wrap">
+      <div class="shots" aria-label="Screenshots">
+        <figure><img src="shots/home.webp" alt="The Nutshell home screen with today's challenges" loading="lazy" /><figcaption><b>Everything in one place</b>Daily challenges in every game</figcaption></figure>
+        <figure><img src="shots/acornascent.webp" alt="Acorn Ascent: a squirrel leaping between tree trunks" loading="lazy" /><figcaption><b>Acorn Ascent</b>Leap, glide and climb</figcaption></figure>
+        <figure><img src="shots/wintercoming.webp" alt="Before the Frost: a squirrel gathering nuts in an autumn forest" loading="lazy" /><figcaption><b>Before the Frost</b>Gather nuts before night falls</figcaption></figure>
+        <figure><img src="shots/sudoku.webp" alt="A Sudoku puzzle" loading="lazy" /><figcaption><b>Sudoku</b>With smart quick fill</figcaption></figure>
+        <figure><img src="shots/solitaire.webp" alt="Classic Solitaire" loading="lazy" /><figcaption><b>Solitaire</b>Six kinds, every deal winnable</figcaption></figure>
+        <figure><img src="shots/nutmahjong.webp" alt="Nut Mahjong tiles" loading="lazy" /><figcaption><b>Nut Mahjong</b>Forest tiles, always solvable</figcaption></figure>
+        <figure><img src="shots/bubblepop.webp" alt="Bubble Pop with nut bubbles" loading="lazy" /><figcaption><b>Bubble Pop</b>Aim, bounce, pop</figcaption></figure>
+        <figure><img src="shots/happysquirrels.webp" alt="Happy Squirrels slingshot level" loading="lazy" /><figcaption><b>Happy Squirrels</b>Fling squirrels, collect nuts</figcaption></figure>
+        <figure><img src="shots/colorsort.webp" alt="Color Sort tubes" loading="lazy" /><figcaption><b>Color Sort</b>Pour, sort and relax</figcaption></figure>
+        <figure><img src="shots/nutsbolts.webp" alt="Nuts &amp; Bolts puzzle" loading="lazy" /><figcaption><b>Nuts &amp; Bolts</b>Screw every colour home</figcaption></figure>
+      </div>
+      <p class="hint">Swipe or scroll for more →</p>
+    </div>
+
+    <main class="wrap">
+      <section>
+        <h2>Made by people who are tired of ads</h2>
+        <p class="lead">
+          Nutshell is made by pejlar, a tiny studio that thinks games should be games – not ad breaks with a puzzle
+          in between. No pop-ups, no timers to watch videos, no coins to buy.
+        </p>
+        <div class="grid">
+          <div class="card"><div class="em">📅</div><h3>A challenge every day</h3><p>A new daily challenge in each game – the same one for everyone, every day.</p></div>
+          <div class="card"><div class="em">🥜</div><h3>Five difficulties</h3><p class="tiers">🙂 Easy peasy · 🤔 Tricky · 🔥 Brain burner · 🤯 Insane · 🥜 Are you nuts?!</p></div>
+          <div class="card"><div class="em">♾️</div><h3>Endless modes</h3><p>Endless climbs, a long winter, Block Fit, Double Up and more – play as long as you like.</p></div>
+          <div class="card"><div class="em">👨‍👩‍👧</div><h3>Play together</h3><p>Memory Nuts has a party mode for up to four players on one phone or tablet.</p></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>12 games free – 18 more with the Golden Nut</h2>
+        <p class="lead">Play every free game on the first three difficulties, plus their daily challenges, for free and without ads.</p>
+        <div class="grid">
+          <div class="card">
+            <h3>Free for everyone</h3>
+            <ul class="games">
+              <li>Arrows</li><li>Sudoku</li><li>Pixel Picture</li><li>Pipe Link</li><li>Color Sort</li><li>Block Fit</li>
+              <li>Tile Match</li><li>Stack Drop</li><li>Double Up</li><li>Nut Smash</li><li>Solitaire</li><li>Nut Mahjong</li>
+            </ul>
+          </div>
+          <div class="card golden">
+            <h3>🌰 The Golden Nut <span class="price">· 29 kr, once</span></h3>
+            <p>Unlocks 18 bonus games, the two hardest difficulties, golden themes and more hints. No subscription.</p>
+            <ul class="games">
+              <li>Acorn Ascent</li><li>Before the Frost</li><li>Crowns</li><li>Nut Escape</li><li>Minefield</li><li>Nuts &amp; Bolts</li>
+              <li>Bridges</li><li>Bubble Pop</li><li>Squirrel Stash</li><li>Trees &amp; Squirrels</li><li>Happy Squirrels</li><li>Nut Sums</li>
+              <li>Code Nut</li><li>Squirrel Run</li><li>Fence It</li><li>Memory Nuts</li><li>Acorn Flip</li><li>Lanterns</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Safe to share with the whole family</h2>
+        <p class="lead">Nothing to worry about when someone else borrows your phone.</p>
+        <div class="grid">
+          <div class="card"><div class="em">🚫</div><h3>No ads, no chat</h3><p>No adverts, and no way to talk to strangers.</p></div>
+          <div class="card"><div class="em">🔒</div><h3>No tracking</h3><p>The app sends nothing to us. Progress stays on your device. <a href="privacy-policy.html">Privacy policy</a></p></div>
+          <div class="card"><div class="em">🧮</div><h3>Grown-ups only</h3><p>The one purchase is behind a grown-up question, so nothing gets bought by accident.</p></div>
+        </div>
+      </section>
     </main>
+
+    <footer class="wrap">
+      <nav>
+        <a href="privacy-policy.html">Privacy policy</a>
+        <a href="mailto:support@pejlar.se">support@pejlar.se</a>
+      </nav>
+      © 2026 Pejlar AB
+    </footer>
   </body>
 </html>
