@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nutshell press kit</title>
+    <meta name="description" content="Press kit for Nutshell by pejlar: facts, story, screenshots, logo, trailer and contact. 30 puzzle and arcade games in one app, no ads, ever." />
+    <meta property="og:title" content="Nutshell press kit" />
+    <meta property="og:description" content="Facts, screenshots, logo and trailer for Nutshell – 30 puzzle and arcade games, no ads, ever." />
+    <meta property="og:image" content="press/feature-graphic.png" />
+    <link rel="icon" href="icon-512.png" />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #f4f6fa;
+        --card: #ffffff;
+        --text: #1f2430;
+        --muted: #5f6779;
+        --line: #e1e5ee;
+        --accent: #4046cd;
+        --hero-a: #6c7cf8;
+        --hero-b: #4046cd;
+        --gold: #f6c453;
+        --shadow: 0 14px 32px rgb(31 36 48 / 0.16);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #14171d;
+          --card: #1e222b;
+          --text: #e8ebf1;
+          --muted: #a2a9b8;
+          --line: #2d323d;
+          --accent: #8f9bff;
+          --hero-a: #3d47b8;
+          --hero-b: #232874;
+          --shadow: 0 14px 32px rgb(0 0 0 / 0.45);
+        }
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      }
+      a { color: var(--accent); }
+      .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+      .hero {
+        background: linear-gradient(160deg, var(--hero-a), var(--hero-b));
+        color: #fff;
+        padding: 28px 0 44px;
+      }
+      .hero nav { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 32px; }
+      .hero nav a { color: #fff; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; }
+      .hero nav img { width: 36px; height: 36px; border-radius: 9px; }
+      .hero h1 { font-size: clamp(2.1rem, 6vw, 3.1rem); line-height: 1.1; margin: 0 0 10px; letter-spacing: -0.02em; }
+      .hero p { margin: 0; max-width: 46ch; font-size: clamp(1.05rem, 3vw, 1.25rem); opacity: 0.95; }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 24px;
+        background: var(--gold);
+        color: #3b2a00;
+        font-weight: 700;
+        text-decoration: none;
+        border-radius: 14px;
+        padding: 12px 20px;
+      }
+      .btn small { font-weight: 600; opacity: 0.75; }
+      .btn:focus-visible, a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+
+      section { padding: 44px 0 4px; }
+      h2 { font-size: clamp(1.5rem, 4vw, 1.9rem); margin: 0 0 14px; letter-spacing: -0.01em; }
+      h3 { margin: 22px 0 6px; font-size: 1.1rem; }
+      p { margin: 0 0 12px; }
+      .muted { color: var(--muted); }
+      .two { display: grid; gap: 24px; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); align-items: start; }
+      @media (max-width: 760px) { .two { grid-template-columns: minmax(0, 1fr); } }
+      .card { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 20px 22px; }
+
+      dl.facts { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 8px 18px; margin: 0; }
+      dl.facts dt { font-weight: 700; }
+      dl.facts dd { margin: 0; color: var(--muted); }
+      blockquote {
+        margin: 0 0 14px;
+        padding: 4px 0 4px 16px;
+        border-left: 4px solid var(--gold);
+        font-size: 1.15rem;
+        font-style: italic;
+      }
+      ul.tight { margin: 0; padding-left: 1.2em; }
+      ul.tight li { margin: 3px 0; }
+      .games { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 0; padding: 0; list-style: none; }
+      .games li { background: var(--bg); border: 1px solid var(--line); border-radius: 999px; padding: 3px 12px; font-size: 0.92rem; }
+
+      .copy { position: relative; }
+      .copy button {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        border: 1px solid var(--line);
+        background: var(--bg);
+        color: var(--text);
+        border-radius: 10px;
+        padding: 4px 10px;
+        font: inherit;
+        font-size: 0.85rem;
+        cursor: pointer;
+      }
+      .copy p:first-of-type { padding-right: 70px; }
+
+      video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 18px; background: #1b1e27; box-shadow: var(--shadow); }
+      .shots { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+      .shots a { display: block; text-decoration: none; color: var(--muted); font-size: 0.88rem; text-align: center; }
+      .shots img { display: block; width: 100%; height: auto; aspect-ratio: 480 / 987; object-fit: cover; border-radius: 16px; border: 4px solid #1b1e27; background: #1b1e27; margin-bottom: 6px; }
+      .art { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+      .art a { display: block; text-decoration: none; color: var(--muted); font-size: 0.9rem; }
+      .art .tile { display: grid; place-items: center; height: 170px; border-radius: 16px; border: 1px solid var(--line); background: var(--card); margin-bottom: 6px; overflow: hidden; }
+      .art .tile img { max-width: 80%; max-height: 140px; }
+      .art .tile.wide img { max-width: 100%; max-height: 100%; }
+      .art .tile.check { background: repeating-conic-gradient(var(--line) 0 25%, var(--card) 0 50%) 0 0 / 20px 20px; }
+
+      footer { padding: 52px 0 56px; text-align: center; color: var(--muted); font-size: 0.95rem; }
+      footer nav { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; margin-bottom: 8px; }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="wrap">
+        <nav>
+          <a href="./"><img src="icon-512.png" alt="" width="36" height="36" />Nutshell</a>
+          <a href="mailto:support@pejlar.se">support@pejlar.se</a>
+        </nav>
+        <h1>Press kit</h1>
+        <p>Everything you need to write about Nutshell: facts, the story, screenshots, logo and trailer. Use anything here freely in coverage of the game.</p>
+        <a class="btn" href="press/nutshell-press-kit.zip" download>⬇ Download everything <small>(zip, 22 MB)</small></a>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="two" aria-labelledby="facts">
+        <div class="card">
+          <h2 id="facts">Fact sheet</h2>
+          <dl class="facts">
+            <dt>Game</dt><dd>Nutshell</dd>
+            <dt>Developer</dt><dd>pejlar (Pejlar AB), Sweden</dd>
+            <dt>Platforms</dt><dd>Android – coming soon to Google Play. iPhone &amp; iPad later.</dd>
+            <dt>Price</dt><dd>Free to play, 12 games. The Golden Nut, a one-time purchase, unlocks everything: 49&nbsp;kr / US$4.99 / €4.99</dd>
+            <dt>Games</dt><dd>30 puzzle, card and arcade games</dd>
+            <dt>Ads</dt><dd>None, ever</dd>
+            <dt>Offline</dt><dd>Yes, no account needed</dd>
+            <dt>Language</dt><dd>English</dd>
+            <dt>Contact</dt><dd><a href="mailto:support@pejlar.se">support@pejlar.se</a></dd>
+          </dl>
+        </div>
+        <div>
+          <h2>The story</h2>
+          <blockquote>“I'm tired of games that are more ads than game.”</blockquote>
+          <p>
+            Nutshell started from that frustration. Many puzzle apps show a video after every level, nag you to buy
+            coins, or ask you to watch an ad to continue. pejlar, a tiny Swedish studio, wanted the opposite: one
+            small app with all the games you would normally install one by one – where you just play.
+          </p>
+          <p>
+            The result is 30 games in one app, from Sudoku, Solitaire and Mahjong to original arcade games like
+            Acorn Ascent and Before the Frost. Twelve games are free, with no ads. A single one-time purchase, the
+            Golden Nut, unlocks the other 18 and the two hardest difficulties. No subscription, no coins.
+          </p>
+        </div>
+      </section>
+
+      <section aria-labelledby="desc">
+        <h2 id="desc">Ready-to-use descriptions</h2>
+        <div class="card copy">
+          <button type="button" data-copy="d1">Copy</button>
+          <p id="d1"><b>Short:</b> Nutshell is 30 puzzle and arcade games in one small app – and no ads, ever.</p>
+        </div>
+        <div class="card copy" style="margin-top: 12px">
+          <button type="button" data-copy="d2">Copy</button>
+          <p id="d2">
+            Nutshell is 30 puzzle, card and arcade games in one app, made by pejlar, a tiny Swedish studio. It has no
+            ads, no account and no chat, and it works offline. Play Sudoku, Solitaire, Nut Mahjong and nine more games
+            for free, with a new daily challenge in each. A single one-time purchase, the Golden Nut, unlocks 18 more
+            games – including the arcade climber Acorn Ascent and the autumn adventure Before the Frost – plus the two
+            hardest difficulties.
+          </p>
+        </div>
+      </section>
+
+      <section class="two" aria-labelledby="features">
+        <div>
+          <h2 id="features">Features</h2>
+          <ul class="tight">
+            <li>No ads, no chat, no loot boxes, no energy timers</li>
+            <li>A daily challenge in every free game – in all 30 with the Golden Nut</li>
+            <li>Five difficulties, from 🙂 <i>Easy peasy</i> to 🥜 <i>Are you nuts?!</i></li>
+            <li>Endless modes, including an endless climb in Acorn Ascent</li>
+            <li>Memory Nuts party mode for up to four players on one phone or tablet</li>
+            <li>A grown-up question before the purchase, so nothing is bought by accident</li>
+            <li>Nutshell sends nothing to pejlar – progress stays on the device. <span class="muted">Optional Google Play Games sign-in shares scores with Google. <a href="privacy-policy.html">Privacy policy</a></span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 style="margin-top: 0">12 free games</h3>
+          <ul class="games">
+            <li>Arrows</li><li>Sudoku</li><li>Pixel Picture</li><li>Pipe Link</li><li>Color Sort</li><li>Block Fit</li>
+            <li>Tile Match</li><li>Stack Drop</li><li>Double Up</li><li>Nut Smash</li><li>Solitaire</li><li>Nut Mahjong</li>
+          </ul>
+          <h3>18 more with the Golden Nut</h3>
+          <ul class="games">
+            <li>Acorn Ascent</li><li>Before the Frost</li><li>Crowns</li><li>Nut Escape</li><li>Minefield</li><li>Nuts &amp; Bolts</li>
+            <li>Bridges</li><li>Bubble Pop</li><li>Squirrel Stash</li><li>Trees &amp; Squirrels</li><li>Happy Squirrels</li><li>Nut Sums</li>
+            <li>Code Nut</li><li>Squirrel Run</li><li>Fence It</li><li>Memory Nuts</li><li>Acorn Flip</li><li>Lanterns</li>
+          </ul>
+        </div>
+      </section>
+
+      <section aria-labelledby="trailer">
+        <h2 id="trailer">Trailer</h2>
+        <video src="press/nutshell-promo-1920x1080.mp4" poster="press/trailer-poster.webp" width="1920" height="1080" controls preload="none"></video>
+        <p class="muted" style="margin-top: 10px">
+          26 seconds, real gameplay, with music.
+          Download: <a href="press/nutshell-promo-1920x1080.mp4" download>landscape 1920×1080</a> ·
+          <a href="press/nutshell-promo-1080x1920.mp4" download>portrait 1080×1920</a>
+        </p>
+      </section>
+
+      <section aria-labelledby="screens">
+        <h2 id="screens">Screenshots</h2>
+        <p class="muted">Tap one for the full-size image (1080×2220, no captions). Store versions with captions are in the zip.</p>
+        <div class="shots">
+          <a href="press/screenshots-raw/1-home.png"><img src="shots/home.webp" alt="Home screen" loading="lazy" />Home</a>
+          <a href="press/screenshots-raw/2-acornascent.png"><img src="shots/acornascent.webp" alt="Acorn Ascent" loading="lazy" />Acorn Ascent</a>
+          <a href="press/screenshots-raw/3-wintercoming.png"><img src="shots/wintercoming.webp" alt="Before the Frost" loading="lazy" />Before the Frost</a>
+          <a href="press/screenshots-raw/4-sudoku.png"><img src="shots/sudoku.webp" alt="Sudoku" loading="lazy" />Sudoku</a>
+          <a href="press/screenshots-raw/5-solitaire.png"><img src="shots/solitaire.webp" alt="Solitaire" loading="lazy" />Solitaire</a>
+          <a href="press/screenshots-raw/6-nutmahjong.png"><img src="shots/nutmahjong.webp" alt="Nut Mahjong" loading="lazy" />Nut Mahjong</a>
+          <a href="press/screenshots-raw/7-bubblepop.png"><img src="shots/bubblepop.webp" alt="Bubble Pop" loading="lazy" />Bubble Pop</a>
+          <a href="press/screenshots-raw/8-nutsbolts.png"><img src="shots/nutsbolts.webp" alt="Nuts &amp; Bolts" loading="lazy" />Nuts &amp; Bolts</a>
+        </div>
+      </section>
+
+      <section aria-labelledby="logo">
+        <h2 id="logo">Logo and art</h2>
+        <div class="art">
+          <a href="press/icon-1024.png" download><span class="tile"><img src="press/icon-1024.png" alt="Nutshell app icon" style="border-radius: 22%" loading="lazy" /></span>App icon · 1024×1024 PNG</a>
+          <a href="press/logo-transparent.png" download><span class="tile check"><img src="press/logo-transparent.png" alt="Nutshell logo on a transparent background" loading="lazy" /></span>Logo, transparent · 1024×1024 PNG</a>
+          <a href="press/feature-graphic.png" download><span class="tile wide"><img src="press/feature-graphic.png" alt="Nutshell banner: All your favourite games in a nutshell" loading="lazy" /></span>Banner · 1024×500 PNG</a>
+        </div>
+      </section>
+
+      <section aria-labelledby="contact">
+        <div class="card">
+          <h2 id="contact">Contact and review codes</h2>
+          <p>
+            Writing about Nutshell or making a video? Email <a href="mailto:support@pejlar.se?subject=Nutshell%20review%20code">support@pejlar.se</a>
+            for a free Golden Nut code, so you can try every game. We answer in English or Swedish.
+          </p>
+          <p class="muted" style="margin: 0">
+            Website: <a href="./">micbre14.github.io/nutshell-site</a> ·
+            <a href="press/FACT-SHEET.txt">Fact sheet as text</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="wrap">
+      <nav>
+        <a href="./">Home</a>
+        <a href="privacy-policy.html">Privacy policy</a>
+        <a href="mailto:support@pejlar.se">support@pejlar.se</a>
+      </nav>
+      © 2026 Pejlar AB
+    </footer>
+    <script>
+      for (const b of document.querySelectorAll('[data-copy]')) {
+        b.addEventListener('click', async () => {
+          const text = document.getElementById(b.dataset.copy).innerText.replace(/^Short:\s*/, '');
+          try {
+            await navigator.clipboard.writeText(text);
+            b.textContent = 'Copied';
+          } catch {
+            b.textContent = 'Select and copy';
+          }
+          setTimeout(() => (b.textContent = 'Copy'), 1800);
+        });
+      }
+    </script>
+  </body>
+</html>

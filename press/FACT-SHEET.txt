@@ -1,0 +1,53 @@
+NUTSHELL – PRESS FACT SHEET
+https://micbre14.github.io/nutshell-site/press.html
+
+Developer      pejlar (Pejlar AB), Sweden
+Platforms      Android (Google Play, coming soon); iPhone and iPad later
+Price          Free to play: 12 games free, no ads
+               The Golden Nut, a one-time purchase, unlocks everything:
+               49 kr / US$4.99 / €4.99. No subscription, no coins.
+Games          30 puzzle, card and arcade games in one app
+Languages      English (store listing also in Swedish)
+Works offline  Yes. No account needed.
+Ads            None, ever
+Contact        support@pejlar.se
+
+ONE LINE
+30 puzzle and arcade games in one small app – and no ads, ever.
+
+SHORT DESCRIPTION
+Nutshell is 30 puzzle, card and arcade games in one app, made by pejlar, a tiny Swedish
+studio. It has no ads, no account and no chat, and it works offline. Twelve games are free;
+a single one-time purchase, the Golden Nut, unlocks the other 18 and the two hardest
+difficulties.
+
+THE STORY
+Nutshell started from a simple frustration: "I'm tired of games that are more ads than game."
+Many puzzle apps show a video after every level, nag you to buy coins, or ask you to watch an
+ad to continue. pejlar wanted the opposite – one app with all the games you'd normally install
+separately, where you just play.
+
+THE GAMES
+Free: Arrows, Sudoku, Pixel Picture, Pipe Link, Color Sort, Block Fit, Tile Match, Stack Drop,
+Double Up, Nut Smash, Solitaire (several ways to play), Nut Mahjong.
+With the Golden Nut: Acorn Ascent, Before the Frost, Crowns, Nut Escape, Minefield,
+Nuts & Bolts, Bridges, Bubble Pop, Squirrel Stash, Trees & Squirrels, Happy Squirrels,
+Nut Sums, Code Nut, Squirrel Run, Fence It, Memory Nuts, Acorn Flip, Lanterns.
+
+FEATURES
+- No ads, no chat, no loot boxes, no energy timers
+- A daily challenge in every free game, and in all 30 with the Golden Nut
+- Five difficulties, from "Easy peasy" to "Are you nuts?!"
+- Endless modes, including an endless climb in Acorn Ascent
+- Memory Nuts party mode for up to four players on one phone or tablet
+- A grown-up question before the purchase, so nothing is bought by accident
+- Nutshell sends nothing to pejlar; progress stays on the device. Optional Google Play Games
+  sign-in shares scores and achievements with Google.
+
+IN THIS KIT
+icon-1024.png, logo-transparent.png, feature-graphic.png (1024 x 500),
+screenshots/ (store screenshots with captions), screenshots-raw/ (1080 x 2220, no captions),
+nutshell-promo-1920x1080.mp4 and nutshell-promo-1080x1920.mp4 (26 s, with music).
+All images and videos may be used freely in coverage of Nutshell.
+
+Review codes: email support@pejlar.se for a free Golden Nut code.
